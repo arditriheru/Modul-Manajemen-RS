@@ -41,8 +41,8 @@
             <?php
             include '../koneksi.php';
             $no=1;
-            $data = mysqli_query($koneksi,"
-              SELECT * FROM lab_tarif;");
+            $cari = $_POST['cari'];
+            $data = mysqli_query($koneksi,"SELECT * FROM lab_tarif WHERE nama LIKE '%' '$cari' '%';");
             while($d = mysqli_fetch_array($data)){
               ?>
               <tr>
