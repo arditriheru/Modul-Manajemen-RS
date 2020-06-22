@@ -37,7 +37,7 @@ $akhir = $_POST['akhir'];
 					AND mr_bl.id_dokter = '$dokter'
 					AND mr_rla.tanggal BETWEEN '$awal' AND '$akhir'
 					GROUP BY icd
-					ORDER BY hasil DESC LIMIT 10;");
+					ORDER BY hasil DESC;");
 					while($d = mysqli_fetch_array($data)){
 				?>
 				   <tr>

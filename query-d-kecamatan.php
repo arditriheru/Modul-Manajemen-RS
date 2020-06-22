@@ -1,54 +1,54 @@
 <div class="row">
-          <div class="col-lg-12">
-            <div class="bs-example">
-              <ul class="nav nav-tabs" style="margin-bottom: 15px;">
-                <li><a href="#1" data-toggle="tab">Yogyakarta</a></li>
-                <li><a href="#2" data-toggle="tab">Sleman</a></li>
-                <li><a href="#3" data-toggle="tab">Bantul</a></li>
-                <li><a href="#4" data-toggle="tab">Kulon Progo</a></li>
-                <li><a href="#5" data-toggle="tab">Gunung Kidul</a></li>
-              </ul>
-              <div id="myTabContent" class="tab-content">
-          <div class="tab-pane fade" id="1">
-	          <div class="row">
-	          <div class="col-lg-12">
-	          <div class="table-responsive">
-	            <table class="table table-bordered table-hover table-striped tablesorter">
-	                <thead>
-                    <tr>
-                    <th><center>No</th>
-                    <th><center>Nama Kecamatan</th>
-                    <th><center>Jumlah</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  <!---------- Batas ----------->
-                  <?php 
-                    include '../koneksi.php';
-                    $no = 1;
-                    $awal = $_POST['awal'];
-		 			$akhir = $_POST['akhir'];
-                    $data = mysqli_query($koneksi,"
-                    	SELECT mr_kecamatan_bps.nama_kecamatan,
-						COUNT(*) AS hasil
-						FROM mr_pasien, mr_kecamatan_bps
-						WHERE mr_pasien.id_kecamatan = mr_kecamatan_bps.kode_kecamatan
-						AND mr_pasien.tanggal BETWEEN '$awal' AND '$akhir'
-						AND mr_pasien.id_kabupaten = 3471
-						GROUP BY mr_pasien.id_kecamatan
-						ORDER BY hasil DESC;");
-                    while($d = mysqli_fetch_array($data)){
-                  ?>
+  <div class="col-lg-12">
+    <div class="bs-example">
+      <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+        <li><a href="#1" data-toggle="tab">Yogyakarta</a></li>
+        <li><a href="#2" data-toggle="tab">Sleman</a></li>
+        <li><a href="#3" data-toggle="tab">Bantul</a></li>
+        <li><a href="#4" data-toggle="tab">Kulon Progo</a></li>
+        <li><a href="#5" data-toggle="tab">Gunung Kidul</a></li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade" id="1">
+         <div class="row">
+           <div class="col-lg-12">
+             <div class="table-responsive">
+               <table class="table table-bordered table-hover table-striped tablesorter">
+                 <thead>
                   <tr>
-                  	<td><center><?php echo $no++; ?></td>
-                    <td><center><?php echo $d['nama_kecamatan']; ?></td>
-                    <td><center><?php echo $d['hasil']; ?></td>
-                  </tr>
-                  <?php } ?>
-                    </tbody>
-                  </table>
-                </div>
-          </div>
+                    <th><center>No</th>
+                      <th><center>Nama Kecamatan</th>
+                        <th><center>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!---------- Batas ----------->
+                        <?php 
+                        include '../koneksi.php';
+                        $no = 1;
+                        $awal = $_POST['awal'];
+                        $akhir = $_POST['akhir'];
+                        $data = mysqli_query($koneksi,"
+                         SELECT mr_kecamatan_bps.nama_kecamatan,
+                         COUNT(*) AS hasil
+                         FROM mr_pasien, mr_kecamatan_bps
+                         WHERE mr_pasien.id_kecamatan = mr_kecamatan_bps.kode_kecamatan
+                         AND mr_pasien.tanggal BETWEEN '$awal' AND '$akhir'
+                         AND mr_pasien.id_kabupaten = 3471
+                         GROUP BY mr_pasien.id_kecamatan
+                         ORDER BY hasil DESC;");
+                        while($d = mysqli_fetch_array($data)){
+                          ?>
+                          <tr>
+                           <td><center><?php echo $no++; ?></td>
+                            <td><center><?php echo $d['nama_kecamatan']; ?></td>
+                              <td><center><?php echo $d['hasil']; ?></td>
+                              </tr>
+                            <?php } ?>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
           <!--<div class="col-lg-6">
       <?php include '../koneksi.php'; ?>
   <div class="col-lg-12">
@@ -182,180 +182,180 @@
     });
   </script>
   </div>
-  </div>-->
-        </div><!-- /.row -->
-        </div>
-          <div class="tab-pane fade" id="2">
-	          <div class="row">
-	          <div class="col-lg-12">
-	          <div class="table-responsive">
-	            <table class="table table-bordered table-hover table-striped tablesorter">
-                <thead>
-                    <tr>
-                    <th><center>No</th>
-                    <th><center>Nama Kecamatan</th>
-                    <th><center>Jumlah</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  <!---------- Batas ----------->
-                  <?php 
-                    include '../koneksi.php';
-                    $no = 1;
-                    $awal = $_POST['awal'];
-		 			$akhir = $_POST['akhir'];
-                    $data = mysqli_query($koneksi,"
-                    	SELECT mr_kecamatan_bps.nama_kecamatan,
-						COUNT(*) AS hasil
-						FROM mr_pasien, mr_kecamatan_bps
-						WHERE mr_pasien.id_kecamatan = mr_kecamatan_bps.kode_kecamatan
-						AND mr_pasien.tanggal BETWEEN '$awal' AND '$akhir'
-						AND mr_pasien.id_kabupaten = 344
-						GROUP BY mr_pasien.id_kecamatan
-						ORDER BY hasil DESC;");
-                    while($d = mysqli_fetch_array($data)){
+</div>-->
+</div><!-- /.row -->
+</div>
+<div class="tab-pane fade" id="2">
+ <div class="row">
+   <div class="col-lg-12">
+     <div class="table-responsive">
+       <table class="table table-bordered table-hover table-striped tablesorter">
+        <thead>
+          <tr>
+            <th><center>No</th>
+              <th><center>Nama Kecamatan</th>
+                <th><center>Jumlah</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!---------- Batas ----------->
+                <?php 
+                include '../koneksi.php';
+                $no = 1;
+                $awal = $_POST['awal'];
+                $akhir = $_POST['akhir'];
+                $data = mysqli_query($koneksi,"
+                 SELECT mr_kecamatan_bps.nama_kecamatan,
+                 COUNT(*) AS hasil
+                 FROM mr_pasien, mr_kecamatan_bps
+                 WHERE mr_pasien.id_kecamatan = mr_kecamatan_bps.kode_kecamatan
+                 AND mr_pasien.tanggal BETWEEN '$awal' AND '$akhir'
+                 AND mr_pasien.id_kabupaten = 344
+                 GROUP BY mr_pasien.id_kecamatan
+                 ORDER BY hasil DESC;");
+                while($d = mysqli_fetch_array($data)){
                   ?>
                   <tr>
                   	<td><center><?php echo $no++; ?></td>
-                    <td><center><?php echo $d['nama_kecamatan']; ?></td>
-                    <td><center><?php echo $d['hasil']; ?></td>
-                  </tr>
-                  <?php } ?>
+                      <td><center><?php echo $d['nama_kecamatan']; ?></td>
+                        <td><center><?php echo $d['hasil']; ?></td>
+                        </tr>
+                      <?php } ?>
                     </tbody>
                   </table>
-                </div>
-          </div>
-        </div><!-- /.row -->
-        </div>
-                <div class="tab-pane fade" id="3">
-                  <div class="row">
-	          <div class="col-lg-12">
-	          <div class="table-responsive">
-	            <table class="table table-bordered table-hover table-striped tablesorter">
-                <thead>
-                    <tr>
-                    <th><center>No</th>
-                    <th><center>Nama Kecamatan</th>
-                    <th><center>Jumlah</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  <!---------- Batas ----------->
-                  <?php 
-                    include '../koneksi.php';
-                    $no = 1;
-                    $awal = $_POST['awal'];
-		 			$akhir = $_POST['akhir'];
-                    $data = mysqli_query($koneksi,"
-                    	SELECT mr_kecamatan_bps.nama_kecamatan,
-						COUNT(*) AS hasil
-						FROM mr_pasien, mr_kecamatan_bps
-						WHERE mr_pasien.id_kecamatan = mr_kecamatan_bps.kode_kecamatan
-						AND mr_pasien.tanggal BETWEEN '$awal' AND '$akhir'
-						AND mr_pasien.id_kabupaten = 342
-						GROUP BY mr_pasien.id_kecamatan
-						ORDER BY hasil DESC;");
-                    while($d = mysqli_fetch_array($data)){
-                  ?>
-                  <tr>
-                  	<td><center><?php echo $no++; ?></td>
-                    <td><center><?php echo $d['nama_kecamatan']; ?></td>
-                    <td><center><?php echo $d['hasil']; ?></td>
-                  </tr>
-                  <?php } ?>
-                    </tbody>
-                  </table>
-                </div>
-          </div>
-        </div><!-- /.row -->
-                </div>
-                <div class="tab-pane fade" id="4">
-                  <div class="row">
-	          <div class="col-lg-12">
-	          <div class="table-responsive">
-	            <table class="table table-bordered table-hover table-striped tablesorter">
-                <thead>
-                    <tr>
-                    <th><center>No</th>
-                    <th><center>Nama Kecamatan</th>
-                    <th><center>Jumlah</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  <!---------- Batas ----------->
-                  <?php 
-                    include '../koneksi.php';
-                    $no = 1;
-                    $awal = $_POST['awal'];
-		 			$akhir = $_POST['akhir'];
-                    $data = mysqli_query($koneksi,"
-                    	SELECT mr_kecamatan_bps.nama_kecamatan,
-						COUNT(*) AS hasil
-						FROM mr_pasien, mr_kecamatan_bps
-						WHERE mr_pasien.id_kecamatan = mr_kecamatan_bps.kode_kecamatan
-						AND mr_pasien.tanggal BETWEEN '$awal' AND '$akhir'
-						AND mr_pasien.id_kabupaten = 341
-						GROUP BY mr_pasien.id_kecamatan
-						ORDER BY hasil DESC;");
-                    while($d = mysqli_fetch_array($data)){
-                  ?>
-                  <tr>
-                  	<td><center><?php echo $no++; ?></td>
-                    <td><center><?php echo $d['nama_kecamatan']; ?></td>
-                    <td><center><?php echo $d['hasil']; ?></td>
-                  </tr>
-                  <?php } ?>
-                    </tbody>
-                  </table>
-                </div>
-          </div>
-        </div><!-- /.row -->
-                </div>
-                <div class="tab-pane fade" id="5">
-                  <div class="row">
-	          <div class="col-lg-12">
-	          <div class="table-responsive">
-	            <table class="table table-bordered table-hover table-striped tablesorter">
-                <thead>
-                    <tr>
-                    <th><center>No</th>
-                    <th><center>Nama Kecamatan</th>
-                    <th><center>Jumlah</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  <!---------- Batas ----------->
-                  <?php 
-                    include '../koneksi.php';
-                    $no = 1;
-                    $awal = $_POST['awal'];
-		 			$akhir = $_POST['akhir'];
-                    $data = mysqli_query($koneksi,"
-                    	SELECT mr_kecamatan_bps.nama_kecamatan,
-						COUNT(*) AS hasil
-						FROM mr_pasien, mr_kecamatan_bps
-						WHERE mr_pasien.id_kecamatan = mr_kecamatan_bps.kode_kecamatan
-						AND mr_pasien.tanggal BETWEEN '$awal' AND '$akhir'
-						AND mr_pasien.id_kabupaten = 343
-						GROUP BY mr_pasien.id_kecamatan
-						ORDER BY hasil DESC;");
-                    while($d = mysqli_fetch_array($data)){
-                  ?>
-                  <tr>
-                  	<td><center><?php echo $no++; ?></td>
-                    <td><center><?php echo $d['nama_kecamatan']; ?></td>
-                    <td><center><?php echo $d['hasil']; ?></td>
-                  </tr>
-                  <?php } ?>
-                    </tbody>
-                  </table>
-                </div>
-          </div>
-        </div><!-- /.row -->
                 </div>
               </div>
-            </div>
-
+            </div><!-- /.row -->
           </div>
-          
+          <div class="tab-pane fade" id="3">
+            <div class="row">
+             <div class="col-lg-12">
+               <div class="table-responsive">
+                 <table class="table table-bordered table-hover table-striped tablesorter">
+                  <thead>
+                    <tr>
+                      <th><center>No</th>
+                        <th><center>Nama Kecamatan</th>
+                          <th><center>Jumlah</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!---------- Batas ----------->
+                          <?php 
+                          include '../koneksi.php';
+                          $no = 1;
+                          $awal = $_POST['awal'];
+                          $akhir = $_POST['akhir'];
+                          $data = mysqli_query($koneksi,"
+                           SELECT mr_kecamatan_bps.nama_kecamatan,
+                           COUNT(*) AS hasil
+                           FROM mr_pasien, mr_kecamatan_bps
+                           WHERE mr_pasien.id_kecamatan = mr_kecamatan_bps.kode_kecamatan
+                           AND mr_pasien.tanggal BETWEEN '$awal' AND '$akhir'
+                           AND mr_pasien.id_kabupaten = 342
+                           GROUP BY mr_pasien.id_kecamatan
+                           ORDER BY hasil DESC;");
+                          while($d = mysqli_fetch_array($data)){
+                            ?>
+                            <tr>
+                             <td><center><?php echo $no++; ?></td>
+                              <td><center><?php echo $d['nama_kecamatan']; ?></td>
+                                <td><center><?php echo $d['hasil']; ?></td>
+                                </tr>
+                              <?php } ?>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div><!-- /.row -->
+                  </div>
+                  <div class="tab-pane fade" id="4">
+                    <div class="row">
+                     <div class="col-lg-12">
+                       <div class="table-responsive">
+                         <table class="table table-bordered table-hover table-striped tablesorter">
+                          <thead>
+                            <tr>
+                              <th><center>No</th>
+                                <th><center>Nama Kecamatan</th>
+                                  <th><center>Jumlah</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <!---------- Batas ----------->
+                                  <?php 
+                                  include '../koneksi.php';
+                                  $no = 1;
+                                  $awal = $_POST['awal'];
+                                  $akhir = $_POST['akhir'];
+                                  $data = mysqli_query($koneksi,"
+                                   SELECT mr_kecamatan_bps.nama_kecamatan,
+                                   COUNT(*) AS hasil
+                                   FROM mr_pasien, mr_kecamatan_bps
+                                   WHERE mr_pasien.id_kecamatan = mr_kecamatan_bps.kode_kecamatan
+                                   AND mr_pasien.tanggal BETWEEN '$awal' AND '$akhir'
+                                   AND mr_pasien.id_kabupaten = 341
+                                   GROUP BY mr_pasien.id_kecamatan
+                                   ORDER BY hasil DESC;");
+                                  while($d = mysqli_fetch_array($data)){
+                                    ?>
+                                    <tr>
+                                     <td><center><?php echo $no++; ?></td>
+                                      <td><center><?php echo $d['nama_kecamatan']; ?></td>
+                                        <td><center><?php echo $d['hasil']; ?></td>
+                                        </tr>
+                                      <?php } ?>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div><!-- /.row -->
+                          </div>
+                          <div class="tab-pane fade" id="5">
+                            <div class="row">
+                             <div class="col-lg-12">
+                               <div class="table-responsive">
+                                 <table class="table table-bordered table-hover table-striped tablesorter">
+                                  <thead>
+                                    <tr>
+                                      <th><center>No</th>
+                                        <th><center>Nama Kecamatan</th>
+                                          <th><center>Jumlah</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <!---------- Batas ----------->
+                                          <?php 
+                                          include '../koneksi.php';
+                                          $no = 1;
+                                          $awal = $_POST['awal'];
+                                          $akhir = $_POST['akhir'];
+                                          $data = mysqli_query($koneksi,"
+                                           SELECT mr_kecamatan_bps.nama_kecamatan,
+                                           COUNT(*) AS hasil
+                                           FROM mr_pasien, mr_kecamatan_bps
+                                           WHERE mr_pasien.id_kecamatan = mr_kecamatan_bps.kode_kecamatan
+                                           AND mr_pasien.tanggal BETWEEN '$awal' AND '$akhir'
+                                           AND mr_pasien.id_kabupaten = 343
+                                           GROUP BY mr_pasien.id_kecamatan
+                                           ORDER BY hasil DESC;");
+                                          while($d = mysqli_fetch_array($data)){
+                                            ?>
+                                            <tr>
+                                             <td><center><?php echo $no++; ?></td>
+                                              <td><center><?php echo $d['nama_kecamatan']; ?></td>
+                                                <td><center><?php echo $d['hasil']; ?></td>
+                                                </tr>
+                                              <?php } ?>
+                                            </tbody>
+                                          </table>
+                                        </div>
+                                      </div>
+                                    </div><!-- /.row -->
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                            
         </div><!-- /.row -->
